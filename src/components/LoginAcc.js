@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React from "react";
 import AuthLayout from "./AuthLayout";
 import { Link } from "react-router-dom";
@@ -44,9 +43,7 @@ const Login = () => {
               </label>
             </div>
             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-              <Link to="/forgot-password">
-                Quên mật khẩu
-              </Link>
+              <Link to="/forgot-password">Quên mật khẩu</Link>
               <button
                 class="btn btn-primary"
                 type="submit"

@@ -1,4 +1,3 @@
-// src/components/ParticlesComponent.js
 import React from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
@@ -23,7 +22,7 @@ const ParticlesComponent = () => {
     () => ({
       background: {
         color: {
-          value: "#1E2F97",
+          value: "#05386B",
         },
       },
       fpsLimit: 120,
@@ -50,10 +49,10 @@ const ParticlesComponent = () => {
       },
       particles: {
         color: {
-          value: "#FFFFFF",
+          value: "#5CDB95",
         },
         links: {
-          color: "#FFFFFF",
+          color: "#EDF5E1",
           distance: 150,
           enable: true,
           opacity: 0.3,

@@ -1,12 +1,24 @@
-// src/components/AuthLayout.js
 import React from 'react';
 import '../styles/styles.css';
+// import '../styles/custom.css';
 import ParticlesComponent from './ParticlesComponent';
+import ErrorPage from './ErrorPage';
 
-const AuthLayout = ({ children }) => {
-  return (
-    <div className="bg-primary page-auth">
-      <ParticlesComponent />
+const AuthLayout = ({ children, errorCode }) => {
+  const renderContent = () => {
+
+    if (errorCode) {
+      return (
+        <ErrorPage
+          errorCode={errorCode.code}
+          message={errorCode.message}
+          buttonText={errorCode.buttonText}
+          buttonLink={errorCode.buttonLink}
+        />
+      );
+    }
+
+    return (
       <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
           <main>
@@ -17,20 +29,27 @@ const AuthLayout = ({ children }) => {
             </div>
           </main>
         </div>
-        <div id="layoutAuthentication_footer">
-          <footer className="py-4 bg-light mt-auto">
-            <div className="container-fluid px-4">
-              <div className="d-flex align-items-center justify-content-between small">
-                <div className="text-muted">Copyright &copy; LiTie'stonerl 2024</div>
-                <div>
-                  <a href="#">Privacy Policy</a>
-                  &middot;
-                  <a href="#">Terms &amp; Conditions</a>
-                </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="bg-primary page-auth">
+      <ParticlesComponent />
+      {renderContent()}
+      <div id="layoutAuthentication_footer">
+        <footer className="py-4 bg-light mt-auto">
+          <div className="container-fluid px-4">
+            <div className="d-flex align-items-center justify-content-between small">
+              <div className="text-muted">Copyright &copy; LiTie'stonerl 2024</div>
+              <div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
               </div>
             </div>
-          </footer>
-        </div>
+          </div>
+        </footer>
       </div>
     </div>
   );

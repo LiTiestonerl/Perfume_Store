@@ -1,4 +1,3 @@
-// src/components/Layout.js
 import React from 'react';
 import Footer from './Footer';
 import ParticlesComponent from './ParticlesComponent';
