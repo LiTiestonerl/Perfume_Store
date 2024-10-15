@@ -5,6 +5,7 @@ import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
 import AuthLayout from "./components/AuthLayout";
 import ErrorPage from "./components/ErrorPage";
+import Index from "./components/Index";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/index" element={<Index />} />
 
           {/* Định nghĩa các route cho các trang lỗi */}
           <Route
@@ -30,7 +32,6 @@ function App() {
               </AuthLayout>
             }
           />
-
           <Route
             path="/404"
             element={
@@ -44,7 +45,6 @@ function App() {
               </AuthLayout>
             }
           />
-
           <Route
             path="/500"
             element={
@@ -58,8 +58,6 @@ function App() {
               </AuthLayout>
             }
           />
-
-          {/* Route mặc định cho trang không tìm thấy */}
           <Route
             path="*"
             element={

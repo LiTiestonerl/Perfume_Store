@@ -3,10 +3,10 @@ import '../styles/styles.css';
 // import '../styles/custom.css';
 import ParticlesComponent from './ParticlesComponent';
 import ErrorPage from './ErrorPage';
+import Footer from './Footer';
 
 const AuthLayout = ({ children, errorCode }) => {
   const renderContent = () => {
-
     if (errorCode) {
       return (
         <ErrorPage
@@ -38,18 +38,9 @@ const AuthLayout = ({ children, errorCode }) => {
       <ParticlesComponent />
       {renderContent()}
       <div id="layoutAuthentication_footer">
-        <footer className="py-4 bg-light mt-auto">
-          <div className="container-fluid px-4">
-            <div className="d-flex align-items-center justify-content-between small">
-              <div className="text-muted">Copyright &copy; LiTie'stonerl 2024</div>
-              <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer>
+          Copyright &copy; LiTie'stonerl 2024
+        </Footer>
       </div>
     </div>
   );
