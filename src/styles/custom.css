@@ -1,0 +1,112 @@
+/* Custom styles for the application */
+
+/* General body styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #f0f2f5; /* Màu nền sáng hơn cho giao diện hiện đại */
+}
+
+/* Document content area */
+#documenter_content {
+  background-color: #ffffff; /* Màu nền trắng cho nội dung */
+  padding: 20px; /* Thêm khoảng cách cho nội dung */
+  border-radius: 8px; /* Bo tròn góc cho nội dung */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nội dung */
+}
+
+/* Styles for warning and info messages */
+.warning,
+.info {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d3d6db;
+  padding: 15px; /* Thêm khoảng cách bên trong cho các thông báo */
+  border-radius: 5px; /* Bo tròn góc */
+}
+
+.warning {
+  background-color: #ffeeba; /* Màu nền vàng nhạt cho cảnh báo */
+}
+
+.info {
+  background-color: #d1ecf1; /* Màu nền xanh nhạt cho thông tin */
+}
+
+/* Specific paragraph styles */
+p.c_1 {
+  background-color: #069; /* Màu nền tối cho tiêu đề */
+  padding: 20px;
+  color: #fff;
+  font-size: 24px; /* Giảm kích thước chữ cho phù hợp */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+p.c_2 {
+  background-color: #960;
+  margin: 20px 0; /* Thêm khoảng cách dọc */
+  font-size: 20px; /* Giảm kích thước chữ cho phù hợp */
+  text-align: right;
+  color: #fff; /* Đổi màu chữ sang trắng cho dễ đọc */
+  padding: 10px; /* Giảm khoảng cách bên trong */
+}
+
+p.c_3 {
+  width: 100%; /* Mở rộng để phù hợp với màn hình */
+  border: 3px solid #090;
+  text-align: center;
+  background: #990;
+  color: #fff;
+  padding: 15px; /* Thêm khoảng cách bên trong */
+}
+
+p.c_4 {
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fef4e9;
+  font-size: 18px;
+  border: solid 1px #4093ae;
+  background: linear-gradient(
+    180deg,
+    #4093ae,
+    #367c94
+  ); /* Sử dụng gradient hiện đại */
+  padding: 15px; /* Thêm khoảng cách bên trong */
+}
+
+/* Styles for blinking text (not recommended) */
+p.c_5 {
+  text-decoration: blink; /* Không khuyến khích sử dụng */
+}
+
+p.c_5:after {
+  content: " Don't use text-decoration:blink in your docs! (added with :after pseudo class)";
+}
+
+/* Định dạng cho tiêu đề của accordion khi mở rộng */
+.custom-accordion-header {
+  background-color: #343a40;
+  color: #ffffff;
+  border: none;
+}
+
+/* Định dạng cho phần nội dung của accordion */
+.custom-accordion-body {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+/* Tùy chỉnh cho nút accordion khi bị đóng */
+.accordion-button.collapsed {
+  color: #ffffff;
+  background-color: #212529;
+}
+
+/* Định dạng khi accordion mở */
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: #343a40;
+}
