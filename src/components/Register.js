@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import AuthLayout from './AuthLayout';
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthLayout from "./AuthLayout";
 
 const Register = () => {
   return (
@@ -10,7 +10,9 @@ const Register = () => {
           <div className="col-lg-7">
             <div className="card shadow-lg border-0 rounded-lg mt-5">
               <div className="card-header">
-                <h3 className="text-center font-weight-light my-4">Tạo tài khoản quản trị viên</h3>
+                <h3 className="text-center font-weight-light my-4">
+                  Tạo tài khoản quản trị viên
+                </h3>
               </div>
               <div className="card-body">
                 <form>
@@ -36,7 +38,9 @@ const Register = () => {
                           placeholder="Enter your last name"
                           required
                         />
-                        <label htmlFor="inputLastName">Họ và tên đệm của bạn</label>
+                        <label htmlFor="inputLastName">
+                          Họ và tên đệm của bạn
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -72,13 +76,18 @@ const Register = () => {
                           placeholder="Confirm password"
                           required
                         />
-                        <label htmlFor="inputPasswordConfirm">Nhập xác nhận mật khẩu</label>
+                        <label htmlFor="inputPasswordConfirm">
+                          Nhập xác nhận mật khẩu
+                        </label>
                       </div>
                     </div>
                   </div>
                   <div className="mt-4 mb-0">
                     <div className="d-grid">
-                      <button type="submit" className="btn btn-primary btn-block">
+                      <button
+                        type="submit"
+                        className="btn btn-primary btn-block"
+                      >
                         TẠO TÀI KHOẢN
                       </button>
                     </div>
@@ -87,7 +96,9 @@ const Register = () => {
               </div>
               <div className="card-footer text-center py-3">
                 <div className="small">
-                  <Link to="/login">Bạn có tài khoản quản trị viên? Quay về đăng nhập!</Link>
+                  <Link to="/login">
+                    Bạn có tài khoản quản trị viên? Quay về đăng nhập!
+                  </Link>
                 </div>
               </div>
             </div>

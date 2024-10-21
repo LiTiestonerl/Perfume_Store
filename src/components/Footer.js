@@ -8,7 +8,7 @@ const Footer = ({ children }) => (
                 <div>
                     <a href="/about">Privacy Policy</a>
                     &middot;
-                    <a href="#">Terms &amp; Conditions</a>
+                    <a href="/terms">Terms & Conditions</a>
                 </div>
             </div>
         </div>

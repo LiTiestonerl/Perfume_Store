@@ -1,6 +1,4 @@
 import React from 'react';
-import '../styles/styles.css';
-// import '../styles/custom.css';
 import ParticlesComponent from './ParticlesComponent';
 import ErrorPage from './ErrorPage';
 import Footer from './Footer';

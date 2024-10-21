@@ -1,7 +1,10 @@
 import React from "react";
 // import { GoogleOAuthProvider } from "@react-oauth/google";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../src/styles/styles.css';
+import '../src/styles/custom.css';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import { Environment } from "./environments/environment";

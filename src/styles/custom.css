@@ -1,14 +1,5 @@
 /* Custom styles for the application */
 
-/* General body styles */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  background-color: #f0f2f5; /* Màu nền sáng hơn cho giao diện hiện đại */
-}
-
 /* Document content area */
 #documenter_content {
   background-color: #ffffff; /* Màu nền trắng cho nội dung */
@@ -109,4 +100,89 @@ p.c_5:after {
 .accordion-button:not(.collapsed) {
   color: #ffffff;
   background-color: #343a40;
+}
+
+
+
+/* định dạng cho sidebar */
+.sb-sidenav {
+  min-height: 100vh;
+  background-color: #343a40;
+  color: white;
+  width: 250px;
+  transition: width 0.3s;
+}
+
+.sb-sidenav.closed {
+  width: 0;
+  overflow: hidden;
+}
+
+.sb-sidenav-menu {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.custom-accordion-header {
+  font-weight: bold;
+  color: white;
+}
+
+.custom-accordion-body {
+  padding-left: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #adb5bd;
+}
+
+.sb-sidenav-footer {
+  padding: 1rem;
+  background-color: #212529;
+}
+
+
+/* định dạng cho datatable */
+
+.data-table-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.table-responsive {
+  margin: 20px 0;
+}
+
+.table {
+  font-size: 14px;
+  color: #333;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.table-dark {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
 }

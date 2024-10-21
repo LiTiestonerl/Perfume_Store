@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Card from "./Card";
 import CustomChart from "./Chart";
 import DataTableComponent from "./DataTable";
 import Footer from "./Footer";
-import FileUpload from "./FileUpload"; 
+import FileUpload from "./FileUpload";
 
 const Index = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   const cardData = [
     {
       title: "Total Sales",
@@ -80,12 +86,17 @@ const Index = () => {
 
   return (
     <div className="sb-nav-fixed">
-      <Navbar />
-      <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-          <Sidebar />
-        </div>
-        <div id="layoutSidenav_content">
+      <Navbar toggleSidebar={toggleSidebar} />
+      <div className="d-flex" id="layoutSidenav">
+        <Sidebar isOpen={isSidebarOpen} />
+        <div
+          id="layoutSidenav_content"
+          className="flex-grow-1"
+          style={{
+            marginLeft: isSidebarOpen ? "0px" : "0",
+            transition: "margin-left 0.3s ease-in-out",
+          }}
+        >
           <main>
             <div className="container-fluid px-4">
               <h1 className="mt-4">Admin Dashboard</h1>
@@ -167,7 +178,7 @@ const Index = () => {
               </div>
             </div>
           </main>
-          <Footer />
+          <Footer>Copyright &copy; LiTie'stonerl 2024</Footer>
         </div>
       </div>
     </div>

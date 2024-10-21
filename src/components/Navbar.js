@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => (
+const Navbar = ({ toggleSidebar }) => (
   <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <Link className="navbar-brand ps-3 me-3" to="/index">
       Perfume Store
     </Link>
-    <button
-      className="btn btn-link me-3"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#layoutSidenav_nav"
-    >
+    <button className="btn btn-link me-3" type="button" onClick={toggleSidebar}>
       <i className="fas fa-bars"></i>
     </button>
     <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">

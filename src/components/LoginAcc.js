@@ -6,7 +6,7 @@ const Login = () => {
 
   return (
     <AuthLayout>
-      <div class="card shadow-lg border-0 rounded-lg mt-5">
+      <div class="card shadow-lg border-0 rounded-lg mt-4">
         <div class="card-header">
           <h3 class="text-center font-weight-light my-4">Đăng nhập hệ thống quản trị</h3>
         </div>
@@ -44,7 +44,7 @@ const Login = () => {
               </label>
             </div>
             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-              <Link to="/forgot-password">Quên mật khẩu</Link>
+              <Link to="/forgot-password">Quên mật khẩu?</Link>
               <button class="btn btn-primary" type="submit" to="/index">
                 ĐĂNG NHẬP
               </button>
