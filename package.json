@@ -10,6 +10,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "assert": "^2.1.0",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "browserify-zlib": "^0.2.0",
     "chart.js": "^4.4.4",
