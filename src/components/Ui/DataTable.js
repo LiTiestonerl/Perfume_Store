@@ -1,25 +1,29 @@
 import React, { useEffect } from "react";
 import { DataTable } from "simple-datatables";
-import FileUpload from "./FileUpload";
 
-const DataTableComponent = ({ data }) => {
+// Custom hook for initializing the DataTable
+const useDataTable = (tableId, data) => {
   useEffect(() => {
-    const table = document.getElementById("datatablesSimple");
+    const table = document.getElementById(tableId);
     if (table) {
       new DataTable(table);
     }
-  }, [data]);
+  }, [tableId, data]);
+};
+
+const DataTableComponent = ({ data = [] }) => {
+  // Sử dụng custom hook để khởi tạo DataTable
+  useDataTable("getAllPerfume", data);
 
   return (
     <div className="table-responsive">
       <table
-        id="datatablesSimple"
+        id="getAllPerfume"
         className="table table-striped table-bordered table-hover"
       >
         <thead className="table-dark">
           <tr>
             <th>No</th>
-            <th>Insert Picture</th>
             <th>Picture</th>
             <th>Name</th>
             <th>Category</th>
@@ -33,11 +37,10 @@ const DataTableComponent = ({ data }) => {
           {data.map((row, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td><FileUpload></FileUpload></td>
               <td>
                 <img
-                  src={row.image}
-                  alt={row.name}
+                  src={row.image || "default-image.jpg"}
+                  alt={row.name || "No Image"}
                   className="data-table-image"
                 />
               </td>

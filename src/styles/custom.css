@@ -3,9 +3,9 @@
 /* Document content area */
 #documenter_content {
   background-color: #ffffff; /* Màu nền trắng cho nội dung */
-  padding: 20px; /* Thêm khoảng cách cho nội dung */
-  border-radius: 8px; /* Bo tròn góc cho nội dung */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nội dung */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styles for warning and info messages */
@@ -13,8 +13,8 @@
 .info {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #d3d6db;
-  padding: 15px; /* Thêm khoảng cách bên trong cho các thông báo */
-  border-radius: 5px; /* Bo tròn góc */
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .warning {
@@ -26,32 +26,38 @@
 }
 
 /* Specific paragraph styles */
+p.c_1,
+p.c_2,
+p.c_3,
+p.c_4,
+p.c_5 {
+  /* Điều chỉnh kiểu chữ riêng lẻ */
+  /* Các kiểu đặc biệt cho từng đoạn văn */
+}
+
 p.c_1 {
-  background-color: #069; /* Màu nền tối cho tiêu đề */
+  background-color: #069;
   padding: 20px;
   color: #fff;
-  font-size: 24px; /* Giảm kích thước chữ cho phù hợp */
-  text-align: center; /* Căn giữa nội dung */
+  font-size: 24px;
+  text-align: center;
 }
-
 p.c_2 {
   background-color: #960;
-  margin: 20px 0; /* Thêm khoảng cách dọc */
-  font-size: 20px; /* Giảm kích thước chữ cho phù hợp */
+  margin: 20px 0;
+  font-size: 20px;
   text-align: right;
-  color: #fff; /* Đổi màu chữ sang trắng cho dễ đọc */
-  padding: 10px; /* Giảm khoảng cách bên trong */
+  color: #fff;
+  padding: 10px;
 }
-
 p.c_3 {
-  width: 100%; /* Mở rộng để phù hợp với màn hình */
+  width: 100%;
   border: 3px solid #090;
   text-align: center;
   background: #990;
   color: #fff;
-  padding: 15px; /* Thêm khoảng cách bên trong */
+  padding: 15px;
 }
-
 p.c_4 {
   text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -60,51 +66,27 @@ p.c_4 {
   color: #fef4e9;
   font-size: 18px;
   border: solid 1px #4093ae;
-  background: linear-gradient(
-    180deg,
-    #4093ae,
-    #367c94
-  ); /* Sử dụng gradient hiện đại */
-  padding: 15px; /* Thêm khoảng cách bên trong */
+  background: linear-gradient(180deg, #4093ae, #367c94);
+  padding: 15px;
 }
-
-/* Styles for blinking text (not recommended) */
-p.c_5 {
-  text-decoration: blink; /* Không khuyến khích sử dụng */
-}
-
 p.c_5:after {
-  content: " Don't use text-decoration:blink in your docs! (added with :after pseudo class)";
+  content: " Don't use text-decoration:blink in your docs!";
 }
 
 /* Định dạng cho tiêu đề của accordion khi mở rộng */
 .custom-accordion-header {
   background-color: #343a40;
   color: #ffffff;
+  font-weight: bold;
   border: none;
 }
-
-/* Định dạng cho phần nội dung của accordion */
 .custom-accordion-body {
   background-color: #343a40;
   color: #ffffff;
+  padding-left: 1rem;
 }
 
-/* Tùy chỉnh cho nút accordion khi bị đóng */
-.accordion-button.collapsed {
-  color: #ffffff;
-  background-color: #212529;
-}
-
-/* Định dạng khi accordion mở */
-.accordion-button:not(.collapsed) {
-  color: #ffffff;
-  background-color: #343a40;
-}
-
-
-
-/* định dạng cho sidebar */
+/* Sidebar styles */
 .sb-sidenav {
   min-height: 100vh;
   background-color: #343a40;
@@ -117,72 +99,92 @@ p.c_5:after {
   width: 0;
   overflow: hidden;
 }
-
 .sb-sidenav-menu {
   flex-grow: 1;
   overflow-y: auto;
 }
-
-.custom-accordion-header {
-  font-weight: bold;
-  color: white;
-}
-
-.custom-accordion-body {
-  padding-left: 1rem;
-}
-
 .nav-link {
   color: white;
   text-decoration: none;
 }
-
 .nav-link:hover {
   color: #adb5bd;
 }
-
 .sb-sidenav-footer {
   padding: 1rem;
   background-color: #212529;
 }
 
-
-/* định dạng cho datatable */
-
+/* DataTable styles */
 .data-table-image {
   width: 50px;
-  height: 50px;
-  border-radius: 8px;
+  height: auto;
+  border-radius: 4px;
 }
-
 .table-responsive {
   margin: 20px 0;
+  overflow-x: auto;
+  padding: 20px;
 }
-
 .table {
   font-size: 14px;
   color: #333;
 }
-
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.05);
 }
-
 .table-hover tbody tr:hover {
   background-color: rgba(0, 123, 255, 0.1);
 }
-
 .table-dark {
   background-color: #343a40;
   color: #fff;
 }
-
 .table-bordered {
   border: 1px solid #dee2e6;
 }
-
 .table th,
 .table td {
   vertical-align: middle;
   text-align: center;
+}
+
+/* Datatable pagination styles */
+.datatable-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 8px;
+}
+.datatable-pagination-list-item {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  margin: 0 4px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.datatable-pagination .pagination-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.datatable-pagination .pagination-button:hover {
+  background-color: #45a049;
+}
+.datatable-pagination .pagination-button.disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+/* Thêm viền đậm cho phần tử có id sidenavAccordion */
+#sidenavAccordion {
+  border: 2px solid #000000; /* Đổi #333 thành màu bạn muốn */
 }

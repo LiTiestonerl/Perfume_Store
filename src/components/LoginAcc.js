@@ -1,68 +1,73 @@
 import React from "react";
-import AuthLayout from "./AuthLayout";
+import AuthLayout from "./Layouts/AuthLayout";
 import { Link } from "react-router-dom";
+import { handleGoogleSignIn } from "./Services/HandleGoogleSignIn"; // Import hàm từ HandleGoogleSignIn.js
 
 const Login = () => {
-
   return (
     <AuthLayout>
-      <div class="card shadow-lg border-0 rounded-lg mt-4">
-        <div class="card-header">
-          <h3 class="text-center font-weight-light my-4">Đăng nhập hệ thống quản trị</h3>
+      <div className="card shadow-lg border-0 rounded-lg mt-4">
+        <div className="card-header">
+          <h3 className="text-center font-weight-light my-4">
+            Đăng nhập hệ thống quản trị
+          </h3>
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <form id="loginForm">
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
-                class="form-control"
+                className="form-control"
                 id="inputEmail"
                 type="email"
                 placeholder="name@example.com"
                 required
               />
-              <label for="inputEmail">Tên đăng nhập</label>
+              <label htmlFor="inputEmail">Tên đăng nhập</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
-                class="form-control"
+                className="form-control"
                 id="inputPassword"
                 type="password"
                 placeholder="Password"
                 required
               />
-              <label for="inputPassword">Mật khẩu</label>
+              <label htmlFor="inputPassword">Mật khẩu</label>
             </div>
-            <div class="form-check mb-3">
+            <div className="form-check mb-3">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 id="inputRememberPassword"
                 type="checkbox"
                 value=""
               />
-              <label class="form-check-label" for="inputRememberPassword">
+              <label
+                className="form-check-label"
+                htmlFor="inputRememberPassword"
+              >
                 Nhớ đăng nhập
               </label>
             </div>
-            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+            <div className="d-flex align-items-center justify-content-between mt-4 mb-0">
               <Link to="/forgot-password">Quên mật khẩu?</Link>
-              <button class="btn btn-primary" type="submit" to="/index">
+              <button className="btn btn-primary" type="submit">
                 ĐĂNG NHẬP
               </button>
             </div>
           </form>
-          <div class="text-center my-3">
+          <div className="text-center my-3">
             <p>Hoặc đăng nhập bằng</p>
             <button
               id="loginButton"
-              class="btn btn-danger"
-              onClick=""
+              className="btn btn-danger"
+              onClick={handleGoogleSignIn} // Gọi hàm khi nhấn nút
             >
-              <i class="fab fa-google"></i> Đăng nhập qua Google
+              <i className="fab fa-google"></i> Đăng nhập qua Google
             </button>
           </div>
         </div>
-        <div class="card-footer text-center py-3">
-          <div class="small">
+        <div className="card-footer text-center py-3">
+          <div className="small">
             <Link to="/register">Cần tài khoản quản trị viên? Đăng ký!</Link>
           </div>
         </div>

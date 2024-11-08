@@ -1,7 +1,7 @@
 import React from 'react';
-import ParticlesComponent from './ParticlesComponent';
-import ErrorPage from './ErrorPage';
-import Footer from './Footer';
+import ParticlesComponent from '../Ui/ParticlesComponent';
+import ErrorPage from '../ErrorPage';
+import Footer from '../Ui/Footer';
 
 const AuthLayout = ({ children, errorCode }) => {
   const renderContent = () => {

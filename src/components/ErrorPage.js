@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import ParticlesComponent from './ParticlesComponent';
+import ParticlesComponent from './Ui/ParticlesComponent';
 
 const ErrorPage = ({ errorCode, message, buttonText, buttonLink }) => {
 

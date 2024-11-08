@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AuthLayout from "./AuthLayout";
+import AuthLayout from "./Layouts/AuthLayout";
 
 const Register = () => {
   return (

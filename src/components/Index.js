@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Card from "./Card";
-import CustomChart from "./Chart";
-import DataTableComponent from "./DataTable";
-import Footer from "./Footer";
+import Navbar from "./Navigation/Navbar";
+import Sidebar from "./Navigation/Sidebar";
+import Card from "./Ui/Card";
+import CustomChart from "./Charts/Chart";
+import Footer from "./Ui/Footer";
 import FileUpload from "./FileUpload";
+import GetPerfume from "./Services/GetPerfume";
 
 const Index = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -53,36 +53,6 @@ const Index = () => {
       },
     ],
   };
-
-  const dataTableData = [
-    {
-      name: "Rose Fragrance",
-      category: "Floral",
-      stock: 50,
-      price: "$45",
-      releaseDate: "2022-01-10",
-      rating: "4.5/5",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "Citrus Splash",
-      category: "Citrus",
-      stock: 30,
-      price: "$55",
-      releaseDate: "2021-11-20",
-      rating: "4.7/5",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "Vanilla Dream",
-      category: "Sweet",
-      stock: 20,
-      price: "$60",
-      releaseDate: "2021-05-15",
-      rating: "4.8/5",
-      image: "https://via.placeholder.com/100",
-    },
-  ];
 
   return (
     <div className="sb-nav-fixed">
@@ -167,11 +137,12 @@ const Index = () => {
                   <div className="card shadow mb-4">
                     <div className="card-header py-3">
                       <h6 className="m-0 font-weight-bold text-primary">
-                        Product Inventory
+                        Product Inventory - Available Perfumes
                       </h6>
                     </div>
                     <div className="card-body">
-                      <DataTableComponent data={dataTableData} />
+                      <GetPerfume />{" "}
+                      {/* Sử dụng GetPerfume thay vì DataTableComponent */}
                     </div>
                   </div>
                 </div>

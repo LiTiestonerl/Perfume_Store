@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/LoginAcc";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
-import AuthLayout from "./components/AuthLayout";
+import AuthLayout from "./components/Layouts/AuthLayout";
 import ErrorPage from "./components/ErrorPage";
 import Index from "./components/Index";
 
@@ -18,7 +18,6 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/index" element={<Index />} />
 
-          {/* Định nghĩa các route cho các trang lỗi */}
           <Route
             path="/401"
             element={
