@@ -6,6 +6,8 @@ import ForgotPassword from "./components/ForgotPassword";
 import AuthLayout from "./components/Layouts/AuthLayout";
 import ErrorPage from "./components/ErrorPage";
 import Index from "./components/Index";
+import ProductManagement from "./components/Ui/ProductManagement";
+import HistoryTransaction from "./components/Ui/HistoryTransaction";
 
 function App() {
   return (
@@ -17,7 +19,15 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/index" element={<Index />} />
-
+          <Route
+            path="/Ui/ProductManagement"
+            element={<ProductManagement />}
+          />{" "}
+          {/* Đã sửa thành `element` */}
+          <Route
+            path="/Ui/HistoryTransaction"
+            element={<HistoryTransaction />}
+          />{" "}
           <Route
             path="/401"
             element={
