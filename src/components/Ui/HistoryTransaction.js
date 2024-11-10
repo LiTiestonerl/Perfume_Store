@@ -41,7 +41,7 @@ const HistoryTransaction = () => {
               </div>
             </div>
           </div>
-          
+
           <Footer>Copyright &copy; LiTie'stonerl 2024</Footer>
         </div>
       </div>
