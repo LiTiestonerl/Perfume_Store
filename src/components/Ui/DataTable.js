@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { DataTable } from "simple-datatables";
 
-// Custom hook for initializing the DataTable
+// Hook tùy chỉnh để khởi tạo DataTable
 const useDataTable = (tableId, data) => {
   useEffect(() => {
     const table = document.getElementById(tableId);
@@ -11,45 +11,50 @@ const useDataTable = (tableId, data) => {
   }, [tableId, data]);
 };
 
-const DataTableComponent = ({ data = [] }) => {
-  // Sử dụng custom hook để khởi tạo DataTable
-  useDataTable("getAllPerfume", data);
+const DataTableComponent = ({
+  data = [],
+  columns = [],
+  tableId = "dataTable",
+}) => {
+  // Sử dụng hook tùy chỉnh để khởi tạo DataTable
+  useDataTable(tableId, data);
+
+  // Nếu không có cột hoặc dữ liệu, hiển thị thông báo
+  if (!columns.length) return <p>Không có cột được cung cấp</p>;
+  if (!data.length) return <p>Không có dữ liệu</p>;
 
   return (
     <div className="table-responsive">
       <table
-        id="getAllPerfume"
+        id={tableId}
         className="table table-striped table-bordered table-hover"
       >
         <thead className="table-dark">
           <tr>
             <th>No</th>
-            <th>Picture</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Stock</th>
-            <th>Price</th>
-            <th>Release Date</th>
-            <th>Rating</th>
+            {columns.map((col) => (
+              <th key={col.key}>{col.label}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {data.map((row, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>
-                <img
-                  src={row.image || "default-image.jpg"}
-                  alt={row.name || "No Image"}
-                  className="data-table-image"
-                />
-              </td>
-              <td>{row.name}</td>
-              <td>{row.category}</td>
-              <td>{row.stock}</td>
-              <td>{row.price}</td>
-              <td>{row.releaseDate}</td>
-              <td>{row.rating}</td>
+              {columns.map((col) => (
+                <td key={col.key}>
+                  {col.key === "image" ? (
+                    <img
+                      src={row[col.key] || "default-image.jpg"}
+                      alt={row.name || "Không có ảnh"}
+                      className="data-table-image"
+                      style={{ width: "50px", height: "50px" }}
+                    />
+                  ) : (
+                    row[col.key] || "N/A"
+                  )}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>

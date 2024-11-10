@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Navbar from "./Navigation/Navbar";
 import Sidebar from "./Navigation/Sidebar";
 import Card from "./Ui/Card";
@@ -6,38 +6,48 @@ import CustomChart from "./Charts/Chart";
 import Footer from "./Ui/Footer";
 import FileUpload from "./FileUpload";
 import GetPerfume from "./Services/GetPerfume";
+import GetInfoUser from "./Services/GetInfoUser";
 
 const Index = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const perfumeTableRef = useRef(null); // Reference for Perfume Table
+  const userTableRef = useRef(null); // Reference for User Table
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleCardClick = (title) => {
+    if (title === "Available Products") {
+      perfumeTableRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (title === "Total Customers") {
+      userTableRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const cardData = [
     {
       title: "Total Sales",
       className: "bg-warning text-white",
-      link: "#",
       icon: "fa-chart-line",
     },
     {
       title: "Total Orders",
       className: "bg-secondary text-white",
-      link: "#",
       icon: "fa-shopping-cart",
     },
     {
       title: "Available Products",
       className: "bg-success text-white",
-      link: "#",
       icon: "fa-box",
+      onClick: () => handleCardClick("Available Products"),
     },
     {
       title: "Total Customers",
       className: "bg-danger text-white",
       link: "#",
       icon: "fa-users",
+      onClick: () => handleCardClick("Total Customers"),
     },
   ];
 
@@ -70,6 +80,8 @@ const Index = () => {
           <main>
             <div className="container-fluid px-4">
               <h1 className="mt-4">Admin Dashboard</h1>
+
+              {/* Card Section */}
               <div className="row">
                 {cardData.map((card, index) => (
                   <div className="col-xl-3 col-md-6 mb-4" key={index}>
@@ -77,11 +89,13 @@ const Index = () => {
                       title={card.title}
                       className={card.className}
                       link={card.link}
+                      onClick={card.onClick} // Assign onClick handler for each card
                     />
                   </div>
                 ))}
               </div>
-              {/* Phần upload file */}
+
+              {/* File Upload Section */}
               <div className="row mt-4">
                 <div className="col-xl-12">
                   <div className="card shadow mb-4">
@@ -96,6 +110,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+
               {/* Charts Section */}
               <div className="row">
                 <div className="col-xl-6">
@@ -131,8 +146,9 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              {/* Data Table Section */}
-              <div className="row">
+
+              {/* Data Table Section for Perfumes */}
+              <div className="row" ref={perfumeTableRef}>
                 <div className="col-xl-12">
                   <div className="card shadow mb-4">
                     <div className="card-header py-3">
@@ -141,8 +157,23 @@ const Index = () => {
                       </h6>
                     </div>
                     <div className="card-body">
-                      <GetPerfume />{" "}
-                      {/* Sử dụng GetPerfume thay vì DataTableComponent */}
+                      <GetPerfume />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Data Table Section for Users */}
+              <div className="row" ref={userTableRef}>
+                <div className="col-xl-12">
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                      <h6 className="m-0 font-weight-bold text-primary">
+                        User Information - Admin Panel
+                      </h6>
+                    </div>
+                    <div className="card-body">
+                      <GetInfoUser />
                     </div>
                   </div>
                 </div>

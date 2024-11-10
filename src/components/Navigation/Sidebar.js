@@ -9,7 +9,7 @@ const Sidebar = ({ isOpen }) => (
         <Accordion.Item eventKey="0">
           <Accordion.Header className="custom-accordion-header">Bảng điều khiển</Accordion.Header>
           <Accordion.Body className="custom-accordion-body">
-            <Link className="nav-link d-flex align-items-center mb-3" to="/dashboard">
+            <Link className="nav-link d-flex align-items-center mb-3" to="/index">
               <div className="sb-nav-link-icon me-2">
                 <i className="fas fa-tachometer-alt"></i>
               </div>

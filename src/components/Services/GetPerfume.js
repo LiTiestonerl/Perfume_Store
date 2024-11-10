@@ -1,12 +1,22 @@
-// GetPerfume.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import DataTable from "../Ui/DataTable";
+import DataTableComponent from "../Ui/DataTable";
 
 const GetPerfume = () => {
   const [perfumes, setPerfumes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Định nghĩa các cột cho bảng
+  const columns = [
+    { key: "image", label: "Image" },
+    { key: "name", label: "Name" },
+    { key: "category", label: "Category" },
+    { key: "stock", label: "Stock Quantity" },
+    { key: "price", label: "Price" },
+    { key: "releaseDate", label: "Release Date" },
+    { key: "rating", label: "Rating" },
+  ];
 
   useEffect(() => {
     const fetchPerfumes = async () => {
@@ -18,11 +28,11 @@ const GetPerfume = () => {
         const transformedData = response.data.map((perfume) => ({
           image: perfume.imageUrl,
           name: perfume.name,
-          category: perfume.scent, // Sử dụng scent làm category
+          category: perfume.scent,
           stock: perfume.stockQuantity,
-          price: `$${perfume.price}`, // Định dạng giá
+          price: `$${perfume.price}`,
           releaseDate: new Date(perfume.dateAdded).toLocaleDateString(),
-          rating: perfume.viewCount, // Giả định viewCount là rating
+          rating: perfume.viewCount,
         }));
         setPerfumes(transformedData);
       } catch (err) {
@@ -40,7 +50,11 @@ const GetPerfume = () => {
 
   return (
     <div>
-      <DataTable data={perfumes} />
+      <DataTableComponent
+        data={perfumes}
+        columns={columns}
+        tableId="perfumeTable"
+      />
     </div>
   );
 };
